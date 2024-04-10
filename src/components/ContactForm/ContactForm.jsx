@@ -8,7 +8,7 @@ const initialValues = {
 
 const schema = Yup.object().shape({
 	name: Yup.string().required().min(3),
-	phone: Yup.number().required().max(12).min(9),
+	phone: Yup.number().required(),
 });
 
 const ContactForm = ({ onSubmit }) => {

@@ -15,15 +15,15 @@ const ContactsList = ({ contacts, onDeleteContact }) => {
 						<svg className="icon icon-delete-1-svgrepo-com w-10 h-10 fill-slate-100 border-2 border-teal-300 hover:border-red-600 hover:bg-red-600  transition-colors duration-500 rounded-md">
 							<svg
 								viewBox="0 0 1024 1024"
-								class="icon"
+								className="icon"
 								version="1.1"
 								xmlns="http://www.w3.org/2000/svg"
 							>
-								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+								<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 								<g
 									id="SVGRepo_tracerCarrier"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 								></g>
 								<g id="SVGRepo_iconCarrier">
 									<path

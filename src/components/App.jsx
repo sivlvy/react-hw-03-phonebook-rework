@@ -2,19 +2,21 @@ import ContactForm from './ContactForm/ContactForm';
 import Container from './Container/Container';
 import Filter from './Filter/Filter';
 import ContactsList from './ContactsList/ContactsList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix';
 
 export const App = () => {
-	const [contacts, setContacts] = useState([
-		{ id: 'id-1', name: 'Rosie Simpson', phone: '459-12-56' },
-		{ id: 'id-2', name: 'Hermione Kline', phone: '443-89-12' },
-		{ id: 'id-3', name: 'Eden Clements', phone: '645-17-79' },
-		{ id: 'id-4', name: 'Annie Copeland', phone: '227-91-26' },
-	]);
+	const [contacts, setContacts] = useState(() => {
+		const storedContacts = localStorage.getItem('contacts');
+		return storedContacts ? JSON.parse(storedContacts) : [];
+	});
 
 	const [filter, setFilter] = useState('');
+
+	useEffect(() => {
+		localStorage.setItem('contacts', JSON.stringify(contacts));
+	}, [contacts]);
 
 	const handleChange = e => {
 		setFilter(e.currentTarget.value);
