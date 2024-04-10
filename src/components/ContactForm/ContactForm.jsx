@@ -8,7 +8,12 @@ const initialValues = {
 
 const schema = Yup.object().shape({
 	name: Yup.string().required().min(3),
-	phone: Yup.number().required(),
+	phone: Yup.number()
+		.typeError("That doesn't look like a phone number")
+		.positive("A phone number can't start with a minus")
+		.integer("A phone number can't include a decimal point")
+		.min(8)
+		.required('A phone number is required'),
 });
 
 const ContactForm = ({ onSubmit }) => {

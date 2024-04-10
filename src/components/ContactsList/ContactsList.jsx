@@ -4,7 +4,7 @@ const ContactsList = ({ contacts, onDeleteContact }) => {
 		<ul className="mt-10">
 			{contacts.map(({ id, name, phone }) => (
 				<li
-					className="border-2 border-slate-400 w-64 h-16 flex justify-around items-center bg-gray-200 border-teal-300 mb-2 rounded-lg"
+					className="border-2 border-slate-400 w-80 h-16 flex justify-between px-5 items-center bg-gray-200 border-teal-300 mb-2 rounded-lg"
 					key={id}
 				>
 					<div className="flex flex-col">
